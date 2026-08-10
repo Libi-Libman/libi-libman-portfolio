@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-forest font-body text-cream;
+  }
+
+  /* Every interactive element gets an explicit, high-contrast focus style —
+     never relies on the browser default, never suppressed. */
+  a,
+  button,
+  input,
+  textarea {
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  /* Chunky four-sided "pixel border" made of stacked box-shadows instead of
+     a real border, so the corners stay hard/square at any zoom level. */
+  .btn-pixel {
+    @apply inline-block font-mono text-[13px] font-bold no-underline px-[22px] py-4 motion-safe:transition-colors;
+  }
+
+  .btn-pixel-primary {
+    @apply btn-pixel text-forest-dark bg-pink;
+    box-shadow:
+      0 -5px 0 #f2799f,
+      0 5px 0 #f2799f,
+      -5px 0 0 #f2799f,
+      5px 0 0 #f2799f;
+  }
+  .btn-pixel-primary:hover {
+    @apply bg-pink-hover;
+    box-shadow:
+      0 -5px 0 #ff9dba,
+      0 5px 0 #ff9dba,
+      -5px 0 0 #ff9dba,
+      5px 0 0 #ff9dba;
+  }
+  .btn-pixel-primary:focus-visible {
+    @apply outline outline-4 outline-teal-accent;
+    outline-offset: 7px;
+  }
+
+  .btn-pixel-secondary {
+    @apply btn-pixel text-cream bg-forest-panelAlt;
+    box-shadow:
+      0 -5px 0 #f4efec,
+      0 5px 0 #f4efec,
+      -5px 0 0 #f4efec,
+      5px 0 0 #f4efec;
+  }
+  .btn-pixel-secondary:hover {
+    @apply bg-forest-panelHover;
+  }
+  .btn-pixel-secondary:focus-visible {
+    @apply outline outline-4 outline-pink;
+    outline-offset: 7px;
+  }
+}

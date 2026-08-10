@@ -1,25 +1,56 @@
-# CODING AGENTS: READ THIS FIRST
+# Libi Libman — portfolio
 
-This is a **handoff bundle** from Claude Design (claude.ai/design).
+A React + TypeScript + Tailwind implementation of the "Pixel A11y Portfolio"
+design (Lotus colour scheme), built from the Claude Design handoff bundle in
+`project/` and `chats/` (see below).
 
-A user mocked up designs in HTML/CSS/JS using an AI design tool, then exported this bundle so a coding agent can implement the designs for real.
+## Running it
 
-## What you should do — IMPORTANT
+```bash
+npm install
+npm run dev      # start the dev server
+npm run build    # type-check + production build to dist/
+npm run lint     # eslint, including jsx-a11y checks
+```
 
-**Read the chat transcripts first.** There are 1 chat transcript(s) in `chats/`. The transcripts show the full back-and-forth between the user and the design assistant — they tell you **what the user actually wants** and **where they landed** after iterating. Don't skip them. The final HTML files are the output, but the chat is where the intent lives.
+## Structure
 
-**Read `project/Pixel A11y Portfolio.dc.html` in full.** The user had this file open when they triggered the handoff, so it's almost certainly the primary design they want built. Read it top to bottom — don't skim. Then **follow its imports**: open every file it pulls in (shared components, CSS, scripts) so you understand how the pieces fit together before you start implementing.
+- `src/components/` — one component per page section (`Header`, `Hero`,
+  `A11yStats`, `QuestLog`/`ProjectCard`, `StatsSection`
+  (`SkillsStats`/`AuditChecklist`), `Contact`, `Footer`).
+- `src/data/` — `projects.ts` and `skills.ts`, the editable content for the
+  Quest Log and Stats sections.
+- `tailwind.config.ts` — the Lotus palette (deep forest/teal + hot-pink
+  accent) as named design tokens.
+- `public/resume.pdf` — placeholder résumé; replace with the real file when
+  it's ready (the "RESUME (PDF)" button already links to `/resume.pdf`).
 
-**If anything is ambiguous, ask the user to confirm before you start implementing.** It's much cheaper to clarify scope up front than to build the wrong thing.
+## Known placeholders (by design, see chat transcript)
 
-## About the design files
+- The 6 Quest Log project cards use the placeholder a11y-project set from the
+  design, with placeholder striped screenshot blocks — no real screenshots
+  were provided.
+- Project case-study links, the archive page, and the accessibility
+  statement page don't exist yet; their links are marked "(coming soon)" for
+  screen reader users rather than left as unlabeled dead links.
+- `public/resume.pdf` is a stub — swap in the real résumé.
 
-The design medium is **HTML/CSS/JS** — these are prototypes, not production code. Your job is to **recreate them pixel-perfectly** in whatever technology makes sense for the target codebase (React, Vue, native, whatever fits). Match the visual output; don't copy the prototype's internal structure unless it happens to fit.
+---
 
-**Don't render these files in a browser or take screenshots unless the user asks you to.** Everything you need — dimensions, colors, layout rules — is spelled out in the source. Read the HTML and CSS directly; a screenshot won't tell you anything they don't.
+## About the design handoff bundle (original notes)
 
-## Bundle contents
+This repo started as a **handoff bundle** from Claude Design (claude.ai/design):
+a user mocked up designs in HTML/CSS/JS using an AI design tool, then
+exported the bundle so a coding agent could implement the design for real.
 
-- `README.md` — this file
-- `chats/` — conversation transcripts (read these!)
-- `project/` — the `Pixel-style a11y portfolio` project files (HTML prototypes, assets, components)
+- `chats/chat1.md` — the design conversation. The user asked for a cozy
+  pixel-art accessibility-focused portfolio inspired by cofounder.co, iterated
+  through several layout/colour directions, and landed on turn 4a: the 2a
+  layout (dusk hero + a11y stats + Quest Log projects + Stats/audit + inn
+  contact form) in the 3a "Lotus" palette (deep forest + teal, hot-pink
+  accent). That turn is what's implemented here.
+- `project/Pixel A11y Portfolio.dc.html` — the exported design prototype
+  (all explored directions, not just the final one). Turn `4a` is the
+  approved design.
+- `project/support.js` — generated runtime that powers the `.dc.html`
+  prototype viewer only; not used by the implemented app.
