@@ -19,16 +19,16 @@ export default function Hero() {
           OPEN QUEST LOG
         </a>
         <a
-          href="/Libi Libman - resume.pdf"
+          href={`${import.meta.env.BASE_URL}Libi Libman - resume.pdf`} 
+          target="_blank"
+          rel="noopener noreferrer"
           className="btn-pixel-secondary"
           aria-describedby="resume-note"
         >
           RESUME (PDF)
+          <span className="sr-only"> (opens in a new tab)</span>
         </a>
       </div>
-      <p id="resume-note" className="sr-only">
-        Placeholder link — résumé coming soon.
-      </p>
       <div
         aria-hidden="true"
         className="mt-11 h-4 bg-[repeating-linear-gradient(90deg,#f4efec_0_16px,transparent_16px_32px)]"
