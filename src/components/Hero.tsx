@@ -19,7 +19,7 @@ export default function Hero() {
           OPEN QUEST LOG
         </a>
         <a
-          href="/resume.pdf"
+          href="/Libi Libman - resume.pdf"
           className="btn-pixel-secondary"
           aria-describedby="resume-note"
         >
