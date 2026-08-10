@@ -9,7 +9,7 @@ export default function Hero() {
       <p className="mx-auto mt-6 max-w-[52ch] text-balance font-body text-lg leading-relaxed text-cream-soft sm:text-xl lg:text-[21px]">
         Frontend & Accessibility Engineer. With over eight years of
         experience as a frontend engineer, I&rsquo;ve contributed to building
-        high-performance, accessible web applications at Staffbase. My work
+        high-performance, accessible web applications. My work
         focuses on architecting and implementing WCAG 2.1-compliant web
         components, conducting accessibility audits, and fostering a culture
         of inclusivity through mentoring and cross-department collaboration.

@@ -22,8 +22,6 @@ npm run lint     # eslint, including jsx-a11y checks
   Quest Log and Stats sections.
 - `tailwind.config.ts` — the Lotus palette (deep forest/teal + hot-pink
   accent) as named design tokens.
-- `public/resume.pdf` — placeholder résumé; replace with the real file when
-  it's ready (the "RESUME (PDF)" button already links to `/resume.pdf`).
 
 ## Known placeholders (by design, see chat transcript)
 
@@ -33,7 +31,7 @@ npm run lint     # eslint, including jsx-a11y checks
 - Project case-study links, the archive page, and the accessibility
   statement page don't exist yet; their links are marked "(coming soon)" for
   screen reader users rather than left as unlabeled dead links.
-- `public/resume.pdf` is a stub — swap in the real résumé.
+
 
 ---
 
@@ -43,12 +41,6 @@ This repo started as a **handoff bundle** from Claude Design (claude.ai/design):
 a user mocked up designs in HTML/CSS/JS using an AI design tool, then
 exported the bundle so a coding agent could implement the design for real.
 
-- `chats/chat1.md` — the design conversation. The user asked for a cozy
-  pixel-art accessibility-focused portfolio inspired by cofounder.co, iterated
-  through several layout/colour directions, and landed on turn 4a: the 2a
-  layout (dusk hero + a11y stats + Quest Log projects + Stats/audit + inn
-  contact form) in the 3a "Lotus" palette (deep forest + teal, hot-pink
-  accent). That turn is what's implemented here.
 - `project/Pixel A11y Portfolio.dc.html` — the exported design prototype
   (all explored directions, not just the final one). Turn `4a` is the
   approved design.
